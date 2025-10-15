@@ -1,0 +1,50 @@
+.slideshow {
+  width: 100%;
+  height: clamp(200px, 30vw, 300px); /* ปรับขนาดตามหน้าจอ */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 25%; /* แสดง 4 รูปพร้อมกัน */
+  min-width: 25%;
+  transition: transform 0s ease-in-out;
+  padding: 10px;
+}
+
+.slide img {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (max-width: 1024px) {
+  .slide {
+    flex: 0 0 33.33%; /* แสดง 3 รูปพร้อมกัน */
+    min-width: 33.33%;
+  }
+}
+
+/* Responsive สำหรับ Mobile */
+@media (max-width: 768px) {
+  .slide {
+    flex: 0 0 50%; /* แสดง 2 รูปพร้อมกัน */
+    min-width: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide {
+    flex: 0 0 100%; /* แสดง 1 รูปต่อ 1 ครั้ง */
+    min-width: 100%;
+  }
+}
